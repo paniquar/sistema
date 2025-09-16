@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <header class="top-header">
+    <h1>ORDER CARE</h1>
+    <nav class="top-menu">
+      <ul>
+        <li class="active">Início</li>
+        <li>Ficha</li>
+      </ul>
+    </nav>
+    <div class="user-info">
+      <i class="bx bxs-user-circle"></i>
+      <span>2</span>
+      <span>Time Tati</span>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li>Galo</li>
+        <li>Tati</li>
+        <li>Lili</li>
+        <li>Luana</li>
+        <li>Anna</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <section class="board-section">
+      <div class="menu">
+        <ul>
+          <li class="active">Pedidos</li>
+          <li>RMAs</li>
+          <li>Finalizados</li>
+        </ul>
+      </div>
+
+      <section class="board" id="board">
+        <div class="column">
+          <h2>Microware</h2>
+          <div class="card">Pedido 12345</div>
+          <div class="card">Pedido 23456</div>
+        </div>
+
+        <div class="column">
+          <h2>Einstein</h2>
+          <div class="card">Pedido 34567</div>
+        </div>
+
+        <div class="column">
+          <h2>NetComp</h2>
+          <div class="card">Pedido 456712</div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const board = document.getElementById('board');
+    const menuItems = document.querySelectorAll('.menu ul li');
+
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        menuItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        board.innerHTML = ''; // Limpa colunas ao trocar de menu
+      });
+    });
+  </script>
+</body>
+
+</html>
